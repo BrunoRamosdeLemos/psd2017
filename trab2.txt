@@ -1,0 +1,99 @@
+﻿
+Nova tarefa: "Trabalho Implementação com Sockets"
+
+Carlos Mauricio Serodio Figueiredo (Google Sala de aula)
+
+para mim Há 1 hora
+
+Detalhes
+
+Google Sala de aula
+Olá, Bruno,
+Carlos Mauricio Serodio Figueiredo postou uma nova tarefa em PSD_2017_1.
+
+
+Tarefa
+Prazo: 27 de mar
+TRabalho em dupla.
+Entregar: 
+Definição de protocolos de aplicação, 
+implementação do cliente e servidor em sua linguagem de preferência.
+
+
+Trabalho Implementação com Sockets
+Implementar sistema de alocação de salas de aula.
+
+Servidor: 
+Mantém recursos (salas: ), 
+informa sobre recursos existentes, 
+informa sobre status de cada recurso, 
+permite alocar recursos e 
+permite desalocar recursos. 
+
+Clientes: consulta e reservam recursos.
+  
+//Solução 
+
+protocolo mensagens:
+é uma string no formato
+PSAS[SPACE][MENSAGEM DE CONTROLE][SPACE][complemento]\n\n\n\n
+
+-Operações: consultar, alocar, desalocar:
+
+
+-mensagens de controle
+
+cliente:
+
+INIT [idcli]- inicia sessao cliente
+
+CONS - cliente solicita lista  de salas.
+
+CONF - confirmação de inicio pelo servidor
+  
+REQU [idcli]\n[id sala]- cliente solicita sala  
+
+FIM [idcli] - fim da transacao,  cliente
+    
+Servidor:
+
+LIST [salas]- serv devolve lista de salas disponiveis
+
+ALOC [id sala]- serv responde que alocou sala
+
+USED [id sala]- serv responde sala em uso
+
+FIMS [idcli] - fim da transacao, serv 
+
+FIMC [idcli] - fim da transacao, cliente 
+
+
+---------
+Pseudo-codigo
+
+class Sala{
+ id : string
+ desc: string 
+ usadaPor :clie.id
+ } 
+
+class Servico{
+  
+  salas :lista de salas
+ 
+  listSala()
+  aloca()
+  desaloca()
+  addSala()
+  remSala()
+  }
+ 
+  class cli{
+  idCliente : int
+  req :lista de salas
+  list()
+  req()
+  
+  }
+  
+ 
