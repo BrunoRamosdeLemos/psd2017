@@ -16,7 +16,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author User
+ * @author Bruno Ramos
  */
 public class ProgramaCliente {
 
