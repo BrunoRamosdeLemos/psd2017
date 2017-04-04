@@ -1,0 +1,9 @@
+#ifndef __HELLO_IDL__
+#define __HELLO_IDL__
+
+
+interface Hello {
+string dizOla(in string mesg);
+};
+
+#endif  // __HELLO_IDL__
