@@ -1,0 +1,59 @@
+Pesquisar sobre CORBA em uma linguagem diferente de Java e implementar 
+um modelo cliente-servidor simples para teste (Hello World). 
+
+Trabalho em dupla. 
+Entregar código e evidências do funcionamento (ex. snapshots ou videos).
+
+
+Aluno: Bruno Ramos de Lemos Leandro
+Solução:
+
+Utilizado:
+Orb: omniORB, versão 4.2.1,construido com Visual Studio 14 
+Plataforma: Windows 7 x86. 
+Linguagem:Servidor e cliente em C++; 
+
+Organização:
+\HelloWorldCORBA
+	hello.idl
+	ExplicaçãoSobre_a_Execução.txt
+	\imagens
+	\clienteHello
+		hello_clt.cc    <-Programa principal
+		hello.hh
+		hello.SK
+	\servidorHello
+		hello_impl.cc <-Programa principal com a classe de implementação
+		hello.hh
+		hello.SK
+
+-Explicações:
+	Criou-se um objeto chamado Hello, que tem uma função dizOla que retorna
+uma string a que recebe como parametro.
+	Este objeto está definido no arquivo hello.idl, o qual foi utilizado para
+gerar hello.hh e hello.SK pelo compilador do omniORB.
+
+Sobre o servidor:
+	-Ele gera uma versão "stringuificada" da refêrencia ao objeto Hello, que 
+é utilizada pelo cliente porque não foi utilizado o servidor de nomes, e a imprimi.
+	Quando há chamadas remotas, ele imprime o valor de retorno de dizOla.
+ 
+Sobre o cliente:
+	-Ele recebe como argumento de linha de comando uma string que repressenta a 
+referência ao objeto Hello que está no servidor. Tem uma função chamada ola que
+chama a função dizOla do objeto remoto com a string "Hello!" como parâmetro, ele
+imprime a resposta do servidor. 
+	Ele faz isso dez vezes.
+	
+Observação: necessita-se do servidor de nomes para o compilador idl.
+	
+-Ordem das imagens:
+servidor_de_nomes
+gerar_stubs
+servidor_inicia
+clienteExecução.
+
+
+Referências:
+GRISBY. Duncan,The Basics, disponivel em:<http://www.omniorb.net/omni42/omniORB/omniORB002.html#toc4> ,
+acesso em 1 de abril de 2017 
